@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,40 +15,29 @@ const geistMono = Geist_Mono({
 const playfair = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   title: "Chaure Estilistes | Peluquería en Les Corts, Barcelona",
   description:
-    "Peluquería en Les Corts con 9 años de experiencia y los mejores peluqueros profesionales certificados. Corte, color, mechas, tratamientos y estética en Barcelona.",
+    "Peluquería profesional en Les Corts, Barcelona. Cortes, color, balayage, tratamientos y peinados de novia. Más de 9 años de experiencia con productos Nashi Argan.",
   keywords: [
-    "peluquería Les Corts",
     "peluquería Barcelona",
+    "peluquería Les Corts",
     "Chaure Estilistes",
-    "corte de pelo Barcelona",
-    "mechas Balayage Les Corts",
-    "tintes Barcelona",
-    "tratamiento keratina Barcelona",
+    "corte de pelo",
+    "balayage",
+    "mechas",
+    "peinados de novia",
+    "Nashi Argan",
   ],
-  authors: [{ name: "Chaure Estilistes" }],
-  icons: {
-    icon: "/images/logo.png",
-  },
   openGraph: {
     title: "Chaure Estilistes | Peluquería en Les Corts, Barcelona",
     description:
-      "Peluquería en Les Corts con 9 años de experiencia. Cortes, tintes, mechas, tratamientos y estética con peluqueros profesionales certificados.",
-    url: "https://chaurestilistes.com",
-    siteName: "Chaure Estilistes",
+      "Peluquería profesional en Les Corts. Cortes, color, balayage y tratamientos con productos Nashi Argan.",
     type: "website",
     locale: "es_ES",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Chaure Estilistes | Peluquería en Les Corts",
-    description: "Peluquería profesional en Les Corts, Barcelona.",
   },
 };
 
@@ -59,12 +47,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
         {children}
-        <Toaster />
       </body>
     </html>
   );
